@@ -15,15 +15,23 @@ describe('test segment', () => {
 
     cy.get('input[name=email]').type(email);
     cy.get('input[name=password').type(pwd);
+
+    // Click Sign in
     cy.xpath('//*[@id="ants-tech-login-iam"]/div/form/div/div[3]/button').click();
     cy.wait(5000);
+
+    // Click skip
     cy.xpath('//*[@id="ants-tech-login-iam"]/div/div[1]/div/div[5]').click();
     cy.wait(5000);
 
+    // Select portal sandbox
     cy.xpath('//*[@id="ants-tech-login-iam"]/div/div[1]/div[3]/div/div[1]',{timeout: 2000}).click();
     cy.wait(20000);
 
+    // Click button menu
     cy.xpath('//*[@id="app"]/div/div/div/div[1]/ants-tech-side-navigation/div/button', {timeout: 5000}).should('be.visible').click();
+
+    // Click menu Personas and select Segments
     cy.xpath('//*[@id="app"]/div/div/div/div[1]/ants-tech-side-navigation/div/aside/div[1]/section[2]/div/div/span[1]')
       .contains('Personas')
       .click();
@@ -31,6 +39,7 @@ describe('test segment', () => {
       .contains('Segments')
       .click();
 
+    // Create segment  
     cy.xpath('//*[@id="main-content"]/div[2]/div/div/div/div/div[1]/div/div/div/div/div/div[1]/div[1]/span/div/span').click();
     cy.get('[role="menuitem"][title="Customer Segment"]').click();
     cy.get('[data-testid="account-item"]')

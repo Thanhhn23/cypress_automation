@@ -8,4 +8,5 @@ module.exports = defineConfig({
   },
   projectId: "6f1pja",
   pageLoadTimeout: 100000,
+  chromeWebSecurity: false
 });

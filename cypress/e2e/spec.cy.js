@@ -4,7 +4,6 @@ const email = 'thanhhn@antsomi.com';
 const pwd = 'Thanhcong2204!@#';
 
 let segmentId;
-let segmentName;
 
 let segmentMember;
 let sqlMember;
